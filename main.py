@@ -6,6 +6,8 @@ from bs4 import BeautifulSoup
 from dotenv import load_dotenv
 import os
 
+load_dotenv()
+
 BASE_URL = 'https://cnlgaming.com'
 BOT_1_TOKEN = os.getenv("BOT_1_TOKEN")
 BOT_2_TOKEN = os.getenv("BOT_2_TOKEN")
