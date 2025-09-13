@@ -5,6 +5,7 @@ import aiohttp
 from bs4 import BeautifulSoup
 from dotenv import load_dotenv
 import os
+from typing import Optional
 
 load_dotenv()
 
@@ -13,7 +14,7 @@ BOT_1_TOKEN = os.getenv("BOT_1_TOKEN")
 BOT_2_TOKEN = os.getenv("BOT_2_TOKEN")
 
 # Scraper 
-async def get_poe_prices_in_eur(session: aiohttp.ClientSession, address: str) -> str | None:
+async def get_poe_prices_in_eur(session: aiohttp.ClientSession, address: str) -> Optional[str]:
     try:
         # Get the main page to obtain a CSRF token
         async with session.get(BASE_URL) as response:
