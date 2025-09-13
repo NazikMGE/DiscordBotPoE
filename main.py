@@ -37,7 +37,7 @@ async def get_poe_prices_in_eur(session: aiohttp.ClientSession, address: str) ->
                 print(f"Error: Failed to change currency to EUR. Response: {currency_data}")
                 return None
 
-        # Step 3: Parse the actual product page
+        # Parse the actual product page
         async with session.get(address) as product_page_response:
             product_page_response.raise_for_status()
             product_text = await product_page_response.text()
